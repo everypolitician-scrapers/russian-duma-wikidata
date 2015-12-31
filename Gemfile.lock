@@ -1,11 +1,14 @@
 GIT
   remote: https://github.com/everypolitician/wikidata-fetcher.git
-  revision: 757c22638a3d2775f6ad92a8e46f78a5817dba2e
+  revision: edad1eb63fdde05309d277f02db85ea27f276e20
   specs:
-    wikidata-fetcher (0.6.1)
+    wikidata-fetcher (0.7.0)
       colorize
       diskcached
+      json
       mediawiki_api
+      rest-client
+      scraperwiki
       wikidata-client (~> 0.0.7)
 
 GIT
@@ -40,10 +43,11 @@ GEM
       http-cookie (~> 1.0.0)
     faraday_middleware (0.10.0)
       faraday (>= 0.7.4, < 0.10)
-    hashie (3.4.2)
+    hashie (3.4.3)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
     httpclient (2.6.0.1)
+    json (1.8.3)
     mediawiki_api (0.5.0)
       faraday (~> 0.9, >= 0.9.0)
       faraday-cookie_jar (~> 0.0, >= 0.0.6)
@@ -55,7 +59,7 @@ GEM
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     open-uri-cached (0.0.5)
-    pry (0.10.2)
+    pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
@@ -68,7 +72,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.1)
-    wikidata-client (0.0.8)
+    wikidata-client (0.0.9)
       excon (~> 0.40)
       faraday (~> 0.9)
       faraday_middleware (~> 0.9)
@@ -86,4 +90,7 @@ DEPENDENCIES
   rest-client
   scraperwiki!
   sqlite_magic!
-  wikidata-fetcher (>= 0.6.1)!
+  wikidata-fetcher (>= 0.7.0)!
+
+BUNDLED WITH
+   1.10.6
