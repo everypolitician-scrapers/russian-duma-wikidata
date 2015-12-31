@@ -14,7 +14,6 @@ end
 
 def wikinames_from(url)
   noko = noko_for(url)
-  sd = 'Список депутатов'
   names = noko.xpath('//h2/span[.="Список депутатов"]//following::table[1]//td[1]//a[not(@class="new")]/@title').map(&:text).uniq
   raise "No names found in #{url}" if names.count.zero?
   return names
