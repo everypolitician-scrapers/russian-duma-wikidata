@@ -17,5 +17,8 @@ ru_7 = EveryPolitician::Wikidata.wikipedia_xpath(
   xpath: '//a[not(@class="new")]/@title',
 )
 
-EveryPolitician::Wikidata.scrape_wikidata(names: { ru: ru_6 | ru_7 })
+by_category = WikiData::Category.new('Категория:Депутаты Государственной думы Российской Федерации VII созыва', 'ru').member_titles |
+              WikiData::Category.new('Категория:Депутаты Государственной думы Российской Федерации VIсозыва', 'ru').member_titles
+
+EveryPolitician::Wikidata.scrape_wikidata(names: { ru: ru_6 | ru_7 | by_category })
 
