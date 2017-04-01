@@ -20,5 +20,20 @@ ru_7 = EveryPolitician::Wikidata.wikipedia_xpath(
 by_category = WikiData::Category.new('Категория:Депутаты Государственной думы Российской Федерации VII созыва', 'ru').member_titles |
               WikiData::Category.new('Категория:Депутаты Государственной думы Российской Федерации VIсозыва', 'ru').member_titles
 
-EveryPolitician::Wikidata.scrape_wikidata(names: { ru: ru_6 | ru_7 | by_category })
+# Find all P39s of the 7th Term
+query = <<EOS
+  SELECT DISTINCT ?item
+  WHERE
+  {
+    BIND(wd:Q17276321 AS ?membership)
+    BIND(wd:Q26708541 AS ?term)
+
+    ?item p:P39 ?position_statement .
+    ?position_statement ps:P39 ?membership .
+    ?position_statement pq:P2937 ?term .
+  }
+EOS
+p39s = EveryPolitician::Wikidata.sparql(query)
+
+EveryPolitician::Wikidata.scrape_wikidata(ids: p39s, names: { ru: ru_6 | ru_7 | by_category })
 
