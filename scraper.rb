@@ -18,7 +18,7 @@ ru_7 = EveryPolitician::Wikidata.wikipedia_xpath(
 )
 
 by_category = WikiData::Category.new('Категория:Депутаты Государственной думы Российской Федерации VII созыва', 'ru').member_titles |
-              WikiData::Category.new('Категория:Депутаты Государственной думы Российской Федерации VIсозыва', 'ru').member_titles
+              WikiData::Category.new('Категория:Депутаты Государственной думы Российской Федерации VI созыва', 'ru').member_titles
 
 # Find all P39s of the 7th Term
 query = <<EOS
