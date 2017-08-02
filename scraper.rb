@@ -13,7 +13,7 @@ ru_6 = EveryPolitician::Wikidata.wikipedia_xpath(
 ru_7 = EveryPolitician::Wikidata.wikipedia_xpath(
   url: 'https://ru.wikipedia.org/wiki/Список_депутатов_Государственной_думы_Российской_Федерации_VII_созыва',
   after: '//h3/span[.="Депутаты, избранные по партийным спискам"]',
-  before: '//h2/span[.="Интересные факты"]',
+  before: '//h2/span[.="См. также"]',
   xpath: '//a[not(@class="new")]/@title',
 )
 
