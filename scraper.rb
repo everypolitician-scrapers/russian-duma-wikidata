@@ -35,5 +35,5 @@ query = <<EOS
 EOS
 p39s = EveryPolitician::Wikidata.sparql(query)
 
-EveryPolitician::Wikidata.scrape_wikidata(ids: p39s, names: { ru: ru_6 | ru_7 | by_category })
+EveryPolitician::Wikidata.scrape_wikidata(ids: p39s, names: { ru: ru_6 | ru_7 | by_category }, batch_size: 250)
 
